@@ -11,9 +11,6 @@ import {bootstrap, Component} from 'angular2/angular2';
 	`
 })
 class App{
-	constructor() {
-		console.log('hi2!');
-	}
 }
 
 bootstrap(App);
