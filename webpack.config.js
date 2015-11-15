@@ -3,9 +3,7 @@ var BrowserSync = require('browser-sync-webpack-plugin');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-	entry: {
-		app: './src/app.ts'
-	},
+	entry: './src/app.ts',
 	output: {
 		path: 'public',
 		publicPath: '',
