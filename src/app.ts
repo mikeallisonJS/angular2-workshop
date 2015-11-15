@@ -1,3 +1,5 @@
+import 'reflect-metadata';
+import 'zone.js';
 import {bootstrap, Component} from 'angular2/angular2';
 
 @Component({
