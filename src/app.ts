@@ -1,6 +1,6 @@
 import 'reflect-metadata';
 import 'zone.js';
-import {bootstrap, Component, FORM_DIRECTIVES, NgFor, NgIf} from 'angular2/angular2';
+import {bootstrap, Component, FORM_DIRECTIVES, CORE_DIRECTIVES} from 'angular2/angular2';
 import Hero from './hero/hero';
 
 @Component({
@@ -25,7 +25,9 @@ import Hero from './hero/hero';
 	<h1>{{title}}</h1>
 	<h2>My Heroes</h2>
 	<ul class="heroes">
-	  <li *ng-for="#hero of heroes" (click)="onSelect(hero)">
+	  <li *ng-for="#hero of heroes"
+	   [ng-class]="getSelectedClass(hero)"
+	   (click)="onSelect(hero)">
 	  	<span class="badge">{{hero.id}}</span> {{hero.name}}
 	  </li>
 	</ul>
@@ -35,7 +37,7 @@ import Hero from './hero/hero';
 		<div><label>name: </label><input [(ng-model)]="selectedHero.name" placeholder="name"></div>
 	</div>
 	`,
-	directives: [FORM_DIRECTIVES, NgFor, NgIf]
+	directives: [FORM_DIRECTIVES, CORE_DIRECTIVES]
 })
 class App{
 	public title = 'Tour of Heroes';
@@ -47,6 +49,9 @@ class App{
 	public selectedHero: Hero;
 	onSelect(hero: Hero) {
 		this.selectedHero = hero;
+	}
+	getSelectedClass(hero: Hero) {
+		return { 'selected': hero === this.selectedHero };
 	}
 }
 
