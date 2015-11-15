@@ -6,11 +6,14 @@ import {bootstrap, Component} from 'angular2/angular2';
 	selector: 'app',
 	template: `
 	<div>
-		Hello World
+		<h1>{{title}}</h1>
+		<h2>{{hero}}</h2>
 	</div>
 	`
 })
 class App{
+	public title = 'Tour of Heroes';
+	public hero = 'Drizzt Do\'Urden';
 }
 
 bootstrap(App);
