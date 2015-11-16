@@ -1,7 +1,7 @@
 import 'reflect-metadata';
 import 'zone.js';
-import {bootstrap, Component, FORM_DIRECTIVES, NgFor, NgIf} from 'angular2/angular2';
-import Hero from './hero/hero';
+import {bootstrap, Component, FORM_DIRECTIVES, CORE_DIRECTIVES} from 'angular2/angular2';
+import Hero from './hero';
 
 @Component({
 	selector: 'app',
@@ -35,7 +35,7 @@ import Hero from './hero/hero';
 		<div><label>name: </label><input [(ng-model)]="selectedHero.name" placeholder="name"></div>
 	</div>
 	`,
-	directives: [FORM_DIRECTIVES, NgFor, NgIf]
+	directives: [FORM_DIRECTIVES, CORE_DIRECTIVES]
 })
 class App{
 	public title = 'Tour of Heroes';
