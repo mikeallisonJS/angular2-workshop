@@ -1,7 +1,7 @@
 import 'reflect-metadata';
 import 'zone.js';
 import {bootstrap, Component, FORM_DIRECTIVES, CORE_DIRECTIVES} from 'angular2/angular2';
-import Hero from './hero/hero';
+import Hero from './hero';
 
 @Component({
 	selector: 'app',
