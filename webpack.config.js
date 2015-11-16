@@ -3,11 +3,11 @@ var BrowserSync = require('browser-sync-webpack-plugin');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-	entry: './src/app.ts',
+	entry: './src/app.component.ts',
 	output: {
 		path: 'public',
 		publicPath: '',
-		filename: '[name].bundle.js',
+		filename: '[name].bundle.js'
 	},
 	cache: true,
 	debug: true,
