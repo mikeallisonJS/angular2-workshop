@@ -12,7 +12,7 @@ import Hero from './hero';
 	<div><label>name: </label>{{hero.name}}</div>
 	`
 })
-class App{
+class App {
 	public title = 'Tour of Heroes';
 	public hero: Hero = {
 		id: 1,
