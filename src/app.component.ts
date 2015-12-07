@@ -51,6 +51,7 @@ class App {
 }
 
 var HEROES: Hero[] = [
+	{ "id": 1, "name": "Drizzt Do'Urden" },
 	{ "id": 11, "name": "Varian Wrynn" },
 	{ "id": 12, "name": "Thor" },
 	{ "id": 13, "name": "Ironman" },
