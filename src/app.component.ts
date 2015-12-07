@@ -18,8 +18,7 @@ class App {
 	public hero: Hero = {
 		id: 1,
 		name: `Drizzt Do'Urden`
-	}
-
+	};
 }
 
 bootstrap(App);
