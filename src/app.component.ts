@@ -19,11 +19,11 @@ import Hero from './hero';
 	`,
 	directives: [FORM_DIRECTIVES, CORE_DIRECTIVES]
 })
-class App{
+class App {
 	public title = 'Tour of Heroes';
 	public hero: Hero = {
 		id: 1,
-		name: 'Drizzt Do\'Urden'
+		name: `Drizzt Do'Urden`
 	}
 	public heroes = HEROES;
 }
