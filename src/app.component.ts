@@ -10,7 +10,7 @@ import {bootstrap, Component} from 'angular2/angular2';
 	</div>
 	`
 })
-class App{
+class App {
 }
 
 bootstrap(App);
