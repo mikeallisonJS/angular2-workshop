@@ -45,7 +45,7 @@ class App {
 	public title = 'Tour of Heroes';
 	public hero: Hero = {
 		id: 1,
-		name: 'Drizzt Do\'Urden'
+		name: `Drizzt Do'Urden`
 	};
 	public heroes = HEROES;
 	public selectedHero: Hero;
@@ -58,6 +58,7 @@ class App {
 }
 
 var HEROES: Hero[] = [
+	{ "id": 1, "name": "Drizzt Do'Urden" },
 	{ "id": 11, "name": "Varian Wrynn" },
 	{ "id": 12, "name": "Thor" },
 	{ "id": 13, "name": "Ironman" },
