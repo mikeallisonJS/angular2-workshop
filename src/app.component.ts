@@ -11,7 +11,7 @@ import Hero from './hero';
 	<h1>{{title}}</h1>
 	<h2>My Heroes</h2>
 	<ul class="heroes">
-	  <li *ng-for="#hero of heroes">
+	  <li *ngFor="#hero of heroes">
 	  	<span class="badge">{{hero.id}}</span> {{hero.name}}
 	  </li>
 	</ul>
@@ -21,12 +21,12 @@ import Hero from './hero';
 	`,
 	directives: [FORM_DIRECTIVES, CORE_DIRECTIVES]
 })
-class App{
+class App {
 	public title = 'Tour of Heroes';
 	public hero: Hero = {
 		id: 1,
 		name: 'Drizzt Do\'Urden'
-	}
+	};
 	public heroes = HEROES;
 }
 
