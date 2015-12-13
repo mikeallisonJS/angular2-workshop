@@ -1,6 +1,7 @@
 import 'reflect-metadata';
 import 'zone.js';
-import {bootstrap, Component} from 'angular2/angular2';
+import {bootstrap} from 'angular2/bootstrap'
+import {Component} from 'angular2/core';
 import Hero from './hero';
 
 @Component({
