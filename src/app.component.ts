@@ -27,8 +27,8 @@ import Hero from './hero';
 	<h1>{{title}}</h1>
 	<h2>My Heroes</h2>
 	<ul class="heroes">
-	  <li *ng-for="#hero of heroes"
-	   [ng-class]="getSelectedClass(hero)"
+	  <li *ngFor="#hero of heroes"
+	   [ngClass]="getSelectedClass(hero)"
 	   (click)="onSelect(hero)">
 	  	<span class="badge">{{hero.id}}</span> {{hero.name}}
 	  </li>
