@@ -1,6 +1,8 @@
 import 'reflect-metadata';
 import 'zone.js';
-import {bootstrap, Component, FORM_DIRECTIVES, CORE_DIRECTIVES} from 'angular2/angular2';
+import {bootstrap} from 'angular2/bootstrap'
+import {Component} from 'angular2/core';
+import {FORM_DIRECTIVES, CORE_DIRECTIVES} from 'angular2/common'
 import Hero from './hero';
 
 @Component({
@@ -31,20 +33,20 @@ import Hero from './hero';
 	  	<span class="badge">{{hero.id}}</span> {{hero.name}}
 	  </li>
 	</ul>
-	<div *ng-if="selectedHero">
+	<div *ngIf="selectedHero">
 		<h2>{{selectedHero.name}} details!</h2>
 		<div><label>id: </label>{{selectedHero.id}}</div>
-		<div><label>name: </label><input [(ng-model)]="selectedHero.name" placeholder="name"></div>
+		<div><label>name: </label><input [(ngModel)]="selectedHero.name" placeholder="name"></div>
 	</div>
 	`,
 	directives: [FORM_DIRECTIVES, CORE_DIRECTIVES]
 })
-class App{
+class App {
 	public title = 'Tour of Heroes';
 	public hero: Hero = {
 		id: 1,
 		name: 'Drizzt Do\'Urden'
-	}
+	};
 	public heroes = HEROES;
 	public selectedHero: Hero;
 	onSelect(hero: Hero) {
