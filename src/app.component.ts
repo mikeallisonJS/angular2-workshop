@@ -1,6 +1,8 @@
 import 'reflect-metadata';
 import 'zone.js';
-import {bootstrap, Component, FORM_DIRECTIVES, CORE_DIRECTIVES} from 'angular2/angular2';
+import {bootstrap} from 'angular2/bootstrap'
+import {Component} from 'angular2/core';
+import {FORM_DIRECTIVES, CORE_DIRECTIVES} from 'angular2/common'
 import Hero from './hero';
 
 @Component({
@@ -37,12 +39,12 @@ import Hero from './hero';
 	`,
 	directives: [FORM_DIRECTIVES, CORE_DIRECTIVES]
 })
-class App{
+class App {
 	public title = 'Tour of Heroes';
 	public hero: Hero = {
 		id: 1,
 		name: 'Drizzt Do\'Urden'
-	}
+	};
 	public heroes = HEROES;
 	public selectedHero: Hero;
 	onSelect(hero: Hero) {
