@@ -14,11 +14,11 @@
   "author": "Mike Allison",
   "license": "MIT",
   "dependencies": {
-    "angular2": "2.0.0-alpha.53",
+    "angular2": "2.0.0-beta.0",
     "es6-shim": "^0.33.13",
     "reflect-metadata": "^0.1.2",
-    "rxjs": "^5.0.0-alpha.14",
-    "zone.js": "^0.5.8"
+    "rxjs": "^5.0.0-beta.0",
+    "zone.js": "^0.5.10"
   },
   "devDependencies": {
     "browser-sync": "^2.10.0",
