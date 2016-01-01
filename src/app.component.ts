@@ -13,8 +13,8 @@ import {Component} from 'angular2/core';
 	`
 })
 class App {
-	public title = 'Tour of Heroes';
-	public hero = `Drizzt Do'Urden`;
+	title = 'Tour of Heroes';
+	hero = `Drizzt Do'Urden`;
 }
 
 bootstrap(App);
