@@ -16,8 +16,8 @@ import Hero from './hero';
 	directives: [FORM_DIRECTIVES]
 })
 class App {
-	public title = 'Tour of Heroes';
-	public hero: Hero = {
+	title = 'Tour of Heroes';
+	hero = {
 		id: 1,
 		name: `Drizzt Do'Urden`
 	};
