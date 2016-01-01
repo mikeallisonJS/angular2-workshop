@@ -3,7 +3,6 @@ import 'zone.js';
 import {bootstrap} from 'angular2/bootstrap'
 import {Component} from 'angular2/core';
 import {FORM_DIRECTIVES} from 'angular2/common'
-import Hero from './hero';
 
 @Component({
 	selector: 'app',
