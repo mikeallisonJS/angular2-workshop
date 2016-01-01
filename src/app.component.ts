@@ -14,8 +14,8 @@ import Hero from './hero';
 	`
 })
 class App {
-	public title = 'Tour of Heroes';
-	public hero: Hero = {
+	title = 'Tour of Heroes';
+	hero: Hero = {
 		id: 1,
 		name: `Drizzt Do'Urden`
 	};
