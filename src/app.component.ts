@@ -2,7 +2,6 @@ import 'reflect-metadata';
 import 'zone.js';
 import {bootstrap} from 'angular2/bootstrap'
 import {Component} from 'angular2/core';
-import Hero from './hero';
 
 @Component({
 	selector: 'app',
@@ -15,7 +14,7 @@ import Hero from './hero';
 })
 class App {
 	title = 'Tour of Heroes';
-	hero: Hero = {
+	hero = {
 		id: 1,
 		name: `Drizzt Do'Urden`
 	};
