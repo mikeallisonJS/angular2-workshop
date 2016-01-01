@@ -3,7 +3,6 @@ import 'zone.js';
 import {bootstrap} from 'angular2/bootstrap'
 import {Component} from 'angular2/core';
 import {FORM_DIRECTIVES, CORE_DIRECTIVES} from 'angular2/common'
-import Hero from './hero';
 
 @Component({
 	selector: 'app',
@@ -22,8 +21,8 @@ import Hero from './hero';
 	directives: [FORM_DIRECTIVES, CORE_DIRECTIVES]
 })
 class App {
-	public title = 'Tour of Heroes';
-	public hero: Hero = {
+	title = 'Tour of Heroes';
+	hero = {
 		id: 1,
 		name: 'Drizzt Do\'Urden'
 	};
