@@ -26,10 +26,10 @@ class App {
 		id: 1,
 		name: 'Drizzt Do\'Urden'
 	};
-	public heroes = HEROES;
+	heroes = HEROES;
 }
 
-var HEROES: Hero[] = [
+var HEROES = [
 	{ "id": 11, "name": "Varian Wrynn" },
 	{ "id": 12, "name": "Thor" },
 	{ "id": 13, "name": "Ironman" },
