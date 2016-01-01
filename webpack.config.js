@@ -27,6 +27,9 @@ module.exports = {
 	},
 	plugins: [
 		new webpack.optimize.OccurenceOrderPlugin(),
+		new webpack.ProvidePlugin({
+			Zone: "zone.js"
+		}),
 		new HtmlWebpackPlugin({
 			template: './src/index.html',
 			inject: 'body'
