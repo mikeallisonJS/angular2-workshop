@@ -3,7 +3,6 @@ import 'zone.js';
 import {bootstrap} from 'angular2/bootstrap'
 import {Component} from 'angular2/core';
 import {FORM_DIRECTIVES, CORE_DIRECTIVES} from 'angular2/common'
-import Hero from './hero';
 
 @Component({
 	selector: 'app',
@@ -42,14 +41,14 @@ import Hero from './hero';
 	directives: [FORM_DIRECTIVES, CORE_DIRECTIVES]
 })
 class App {
-	public title = 'Tour of Heroes';
-	public hero: Hero = {
+	title = 'Tour of Heroes';
+	hero = {
 		id: 1,
-		name: `Drizzt Do'Urden`
+		name: 'Drizzt Do\'Urden'
 	};
-	public heroes = HEROES;
-	public selectedHero: Hero;
-	onSelect(hero: Hero) {
+	heroes = HEROES;
+	selectedHero;
+	onSelect(hero) {
 		this.selectedHero = hero;
 	}
 	getSelectedClass(hero: Hero) {
@@ -57,7 +56,7 @@ class App {
 	}
 }
 
-var HEROES: Hero[] = [
+var HEROES = [
 	{ "id": 1, "name": "Drizzt Do'Urden" },
 	{ "id": 11, "name": "Varian Wrynn" },
 	{ "id": 12, "name": "Thor" },
