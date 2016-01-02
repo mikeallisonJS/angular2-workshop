@@ -2,6 +2,7 @@ import 'reflect-metadata';
 import 'zone.js';
 import {bootstrap} from 'angular2/bootstrap'
 import {Component} from 'angular2/core';
+import {RouteConfig, ROUTER_DIRECTIVES, Router, ROUTER_PROVIDERS} from 'angular2/router';
 import HeroService from "./hero.service";
 import HeroesComponent from "./heroes.component";
 import './app.css';
@@ -10,12 +11,16 @@ import './app.css';
 	selector: 'app',
 	template: `
 		<h1>{{title}}</h1>
-		<heroes></heroes>
+		<router-outlet></router-outlet>
 	`,
-	directives: [HeroesComponent]
+	directives: [ROUTER_DIRECTIVES]
 })
+@RouteConfig([
+	{path: '/', redirectTo: ['/heroes']},
+	{path: '/heroes', component: HeroesComponent, name: 'Heroes'}
+])
 class App {
 	title = 'Tour of Heroes';
 }
 
-bootstrap(App, [HeroService]);
+bootstrap(App, [HeroService, ROUTER_PROVIDERS]);
