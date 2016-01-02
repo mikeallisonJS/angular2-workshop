@@ -4,6 +4,7 @@ import {bootstrap} from 'angular2/bootstrap'
 import {Component} from 'angular2/core';
 import {FORM_DIRECTIVES, CORE_DIRECTIVES} from 'angular2/common'
 import HeroDetailComponent from "./hero-detail.component";
+import HeroService from "./hero.service";
 
 @Component({
 	selector: 'app',
@@ -39,12 +40,14 @@ import HeroDetailComponent from "./hero-detail.component";
 	directives: [FORM_DIRECTIVES, CORE_DIRECTIVES, HeroDetailComponent]
 })
 class App {
+	constructor(public heroService: HeroService) {
+	}
 	title = 'Tour of Heroes';
 	hero = {
 		id: 1,
 		name: 'Drizzt Do\'Urden'
 	};
-	heroes = HEROES;
+	heroes = this.heroService.getHeroes();
 	selectedHero;
 	onSelect(hero) {
 		this.selectedHero = hero;
@@ -54,17 +57,4 @@ class App {
 	}
 }
 
-var HEROES = [
-	{ "id": 1, "name": "Drizzt Do'Urden" },
-	{ "id": 11, "name": "Varian Wrynn" },
-	{ "id": 12, "name": "Thor" },
-	{ "id": 13, "name": "Ironman" },
-	{ "id": 14, "name": "The Hulk" },
-	{ "id": 15, "name": "Superman" },
-	{ "id": 16, "name": "Batman" },
-	{ "id": 17, "name": "Kvothe" },
-	{ "id": 18, "name": "Muad'Dib" },
-	{ "id": 19, "name": "Valentine Michael Smith" },
-	{ "id": 20, "name": "Odin" }
-];
-bootstrap(App);
+bootstrap(App, [HeroService]);
