@@ -16,7 +16,7 @@ import './app.css';
 	directives: [ROUTER_DIRECTIVES]
 })
 @RouteConfig([
-	{path: '/', redirectTo: ['/heroes']},
+	{path: '/', redirectTo: ['Heroes']},
 	{path: '/heroes', component: HeroesComponent, name: 'Heroes'}
 ])
 class App {
