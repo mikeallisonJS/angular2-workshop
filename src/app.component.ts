@@ -27,7 +27,7 @@ import {FORM_DIRECTIVES, CORE_DIRECTIVES} from 'angular2/common'
 	<h2>My Heroes</h2>
 	<ul class="heroes">
 	  <li *ngFor="#hero of heroes"
-	   [ngClass]="getSelectedClass(hero)"
+	   [class.selected]="getSelectedClass(hero)"
 	   (click)="onSelect(hero)">
 	  	<span class="badge">{{hero.id}}</span> {{hero.name}}
 	  </li>
@@ -51,8 +51,8 @@ class App {
 	onSelect(hero) {
 		this.selectedHero = hero;
 	}
-	getSelectedClass(hero: Hero) {
-		return { 'selected': hero === this.selectedHero };
+	getSelectedClass(hero) {
+		return hero === this.selectedHero;
 	}
 }
 
