@@ -2,7 +2,7 @@ import 'reflect-metadata';
 import 'zone.js';
 import {bootstrap} from 'angular2/bootstrap'
 import {Component} from 'angular2/core';
-import {RouteConfig, ROUTER_DIRECTIVES, Router, ROUTER_PROVIDERS} from 'angular2/router';
+import {RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS} from 'angular2/router';
 import HeroService from "./hero.service";
 import HeroesComponent from "./heroes.component";
 import './app.css';
