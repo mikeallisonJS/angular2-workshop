@@ -3,6 +3,7 @@ import 'zone.js';
 import {bootstrap} from 'angular2/bootstrap'
 import {Component} from 'angular2/core';
 import {FORM_DIRECTIVES, CORE_DIRECTIVES} from 'angular2/common'
+import HeroDetailComponent from "./hero-detail.component";
 
 @Component({
 	selector: 'app',
@@ -32,13 +33,10 @@ import {FORM_DIRECTIVES, CORE_DIRECTIVES} from 'angular2/common'
 	  	<span class="badge">{{hero.id}}</span> {{hero.name}}
 	  </li>
 	</ul>
-	<div *ngIf="selectedHero">
-		<h2>{{selectedHero.name}} details!</h2>
-		<div><label>id: </label>{{selectedHero.id}}</div>
-		<div><label>name: </label><input [(ngModel)]="selectedHero.name" placeholder="name"></div>
-	</div>
+	<hero-detail *ngIf="selectedHero" [hero]="selectedHero">
+	</hero-detail>
 	`,
-	directives: [FORM_DIRECTIVES, CORE_DIRECTIVES]
+	directives: [FORM_DIRECTIVES, CORE_DIRECTIVES, HeroDetailComponent]
 })
 class App {
 	title = 'Tour of Heroes';
