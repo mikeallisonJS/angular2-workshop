@@ -1,6 +1,8 @@
 var webpack = require('webpack');
 var BrowserSync = require('browser-sync-webpack-plugin');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
+var ExtractTextPlugin = require('extract-text-webpack-plugin');
+var modRewrite = require('connect-modrewrite');
 
 module.exports = {
 	entry: './src/app.component.ts',
@@ -27,9 +29,7 @@ module.exports = {
 	},
 	plugins: [
 		new webpack.optimize.OccurenceOrderPlugin(),
-		new webpack.ProvidePlugin({
-			Zone: "zone.js"
-		}),
+		new ExtractTextPlugin('[name].[hash].css'),
 		new HtmlWebpackPlugin({
 			template: './src/index.html',
 			inject: 'body'
@@ -37,7 +37,10 @@ module.exports = {
 		new BrowserSync({
 			host: 'localhost',
 			port: 3000,
-			server: { baseDir: ['public'] }
+			server: { baseDir: ['public'] },
+			middleware: [
+				modRewrite(['^[^\\.]*$ /index.html [L]'])
+			]
 		})
 	],
 	module: {
@@ -52,6 +55,14 @@ module.exports = {
 			}, {
 				test: /\.(eot|ttf|wav|mp3)$/,
 				loader: 'file-loader'
+			}, {
+				test: /\.css$/,
+				// Reference: https://github.com/webpack/extract-text-webpack-plugin
+				// Extract css files in production builds
+				//
+				// Reference: https://github.com/webpack/style-loader
+				// Use style-loader in development for hot-loading
+				loader: ExtractTextPlugin.extract('style', 'css?sourceMap!postcss')
 			}
 		]
 	}
